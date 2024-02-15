@@ -91,6 +91,36 @@ Now try to guess the output of these commands
 
 INSERT AN R CHUNK HERE AND RUN EACH OF THESE COMMANDS. Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*. Then state what each of these does.
 
+```{r}
+length(x)
+```
+
+length(x) returns the number of items in the set.
+
+```{r}
+max(x)
+```
+
+max(x) returns the maximum value in the set of integers.
+
+```{r}
+x[x<10]
+```
+
+x\[x\<10\] returns all integers in the set that are less than 10 (the value provided).
+
+```{r}
+x^2
+```
+
+x\^2 returns the square value of each integer in the set.
+
+```{r}
+x[ x < 12 & x > 7]
+```
+
+x\[x\<12 & x\>7\] returns all values greater than 7 and less than 12.
+
 #### 3
 
 Is `-1:2` the same as `(-1):2` or `-(1:2)`? INSERT AN R CHUNK HERE AND RUN EACH OF THESE COMMANDS. Then state what each of these does.
