@@ -125,6 +125,28 @@ x\[x\<12 & x\>7\] returns all values greater than 7 and less than 12.
 
 Is `-1:2` the same as `(-1):2` or `-(1:2)`? INSERT AN R CHUNK HERE AND RUN EACH OF THESE COMMANDS. Then state what each of these does.
 
+```{r}
+-1:2
+```
+
+```{r}
+(-1):2
+```
+
+```{r}
+-(1:2)
+```
+
+-1:2 and (-1):2 return the same results. They give all integers between the lowest and highest values.
+
+-(1:2) returns the negative value of the integers inside the parenthesis.
+
+```{r}
+-1:2
+(-1):2
+-(1:2)
+```
+
 ### Data input, plotting, and tests
 
 You can read in a dataset from the internet following this protocol.
