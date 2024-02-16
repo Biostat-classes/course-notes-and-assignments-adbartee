@@ -181,6 +181,14 @@ Change the column named *BodyWt* to *Body_weight*"\* in the sleep dataset.
 
 ADD ANY R CHUNKS YOU USED TO COMPLETE THE TASK.
 
+```{r}
+names(sleep)[names(sleep) %in% "BodyWt"] <- "Body_weight"
+```
+
+```{r}
+str(sleep)
+```
+
 #### 6
 
 Produce a plot of how *TotalSleep* differs between primates and other species. What is this plot showing?
@@ -209,6 +217,15 @@ NOTE YOU CAN ADD A PLOT TO THE DOCUMENT TOO! AMEND THE BELOW AS NEEDED.
 
 ```{r}
 plot(cars)
+```
+
+```{r}
+plot(TotalSleep ~ Primate, sleep)
+```
+
+```{r}
+plot(TotalSleep ~ factor(Primate), sleep, main = "Variance in sleep differs between primates and non-primates", 
+     xlab = "Primate", ylab = "Total sleep (hours)")
 ```
 
 #### 7
