@@ -165,6 +165,16 @@ How many rows does the **sleep** data set have (hint: `?dim`)? What kind of data
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
 
+```{r}
+? sleep
+dim(sleep)
+str(sleep)
+```
+
+dim(sleep) returns rows and columns, in that order? but looking at the data returned it appears to be the opposite. This data set has 62 objects of 12 variables.
+
+str returns the size of the dataset. Can I get this value to appear in the environment tab? I do not understand the use of \$ to select columns.
+
 #### 5
 
 Change the column named *BodyWt* to *Body_weight*"\* in the sleep dataset.
