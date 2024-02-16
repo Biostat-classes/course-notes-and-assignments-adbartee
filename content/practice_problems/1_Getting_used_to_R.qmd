@@ -234,6 +234,22 @@ The **sleep** dataset begs to have a linear model fit for it. Let's consider. Fi
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
 
+```{r}
+plot(TotalSleep ~ BrainWt, sleep)
+```
+
+```{r}
+sleep_fit <- lm(TotalSleep ~ BrainWt, sleep[sleep$BrainWt<1000,])
+summary(sleep_fit)
+```
+
+```{r}
+plot(TotalSleep ~ BrainWt, data = sleep[sleep$BrainWt <  1000, ])
+abline(sleep_fit)
+```
+
+With outliers excluded the linear model fits the data better. If the outliers had been included the line of best fit would be much flatter. According to the data, total sleep decreases as brain weight increases.
+
 ### EXTRA QUESTIONS
 
 *not required*
