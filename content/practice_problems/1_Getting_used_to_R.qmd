@@ -248,6 +248,12 @@ plot(TotalSleep ~ BrainWt, data = sleep[sleep$BrainWt <  1000, ])
 abline(sleep_fit)
 ```
 
+Found P-value of
+
+```         
+p-value: 0.0002782
+```
+
 With outliers excluded the linear model fits the data better. If the outliers had been included the line of best fit would be much flatter. According to the data, total sleep decreases as brain weight increases.
 
 ### EXTRA QUESTIONS
