@@ -684,3 +684,6 @@ approach normality. The noted distributions are:
 -   Chi-square(df=4) {low Kurtosis / moderate skewness / single
     truncation}
 -   Binomial distribution (p=.7) {discrete distribution\]
+
+```{}
+```
