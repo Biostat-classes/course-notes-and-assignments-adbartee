@@ -1,6 +1,9 @@
 ---
 title: "Getting used to R"
 bibliography: ../references.bib
+editor: Andrew Bartee 02/15/2024
+  markdown: 
+    wrap: 72
 ---
 
 <!-- COMMENT NOT SHOW IN ANY OUTPUT: Code chunk below sets overall defaults for .qmd file; these inlcude showing output by default and looking for files relative to .Rpoj file, not .qmd file, which makes putting filesin different folders easier  -->
@@ -12,85 +15,49 @@ knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 
 ### Overview
 
-The focus of this overview is to get you used to tools we will be using
-in class. Before completing it you should have a basic understanding of
-using R. We will do an introduction in class [(download help file)](../Primer_material/R_primer.R). 
-You should also be comfortable using Rstudio and github
-[(see help file)](../Primer_material/Tools_overview.qmd).
+The focus of this overview is to get you used to tools we will be using in class. Before completing it you should have a basic understanding of using R. We will do an introduction in class [(download help file)](../Primer_material/R_primer.R). You should also be comfortable using Rstudio and github [(see help file)](../Primer_material/Tools_overview.qmd).
 
 #### Rmd basics
 
-Rmd files differ from R files in that they combine regular text with
-code chunks. This is a code chunk
+Rmd files differ from R files in that they combine regular text with code chunks. This is a code chunk
 
 ```{r}
 print("this is a chunk")
 ```
 
-Code chunks combine code with output. When combined with regular
-text/prose, this makes it easier to produce a range of documents. You
-set the output in the YAML header (the stuff between the 3 dashes you
-see at top of this document).
+Code chunks combine code with output. When combined with regular text/prose, this makes it easier to produce a range of documents. You set the output in the YAML header (the stuff between the 3 dashes you see at top of this document).
 
-After you write the file, you **Knit** it to turn the Rmd file into the
-selected output. Try it now. Note the first time you do this in a
-project you may be prompted to install a number of packages! If you are
-using a webservice you may also need to allow pop-ups in your browser.
-Don't be surprised if a new window pops up (it should).
+After you write the file, you **Knit** it to turn the Rmd file into the selected output. Try it now. Note the first time you do this in a project you may be prompted to install a number of packages! If you are using a webservice you may also need to allow pop-ups in your browser. Don't be surprised if a new window pops up (it should).
 
-![The knit button turns your .rmd file into other
-products](https://lh3.googleusercontent.com/pw/ACtC-3dlSoGJDHtdGqEBr8L2X-yqZ-08Z95RHUMvaxHqF9EOFcBnqtamYMAWOr75mohUSL_KvWtBTt-u4KrdoHgceHc-sZiViw6l9ZqEQToLIsy6AwvQIQMrJgLbtXfV6gNLDgQvgT3N7aq9pk9-x5ugpegjYA=w378-h109-no)
+![The knit button turns your .rmd file into other products](https://lh3.googleusercontent.com/pw/ACtC-3dlSoGJDHtdGqEBr8L2X-yqZ-08Z95RHUMvaxHqF9EOFcBnqtamYMAWOr75mohUSL_KvWtBTt-u4KrdoHgceHc-sZiViw6l9ZqEQToLIsy6AwvQIQMrJgLbtXfV6gNLDgQvgT3N7aq9pk9-x5ugpegjYA=w378-h109-no)
 
-The **Knit** button saves the .Rmd file and renders a new version whose
-output depends on what you selected in the header. Here we have
-html_document, so if everything works a preview of a webpage like
-document should appear. The file also produces a github friendly .md
-file. **This means you should only edit the Rmd file (leave the md and
-output files alone! They are automatically produced any changes you make
-there will be overwritten by your next knit)**.
+The **Knit** button saves the .Rmd file and renders a new version whose output depends on what you selected in the header. Here we have html_document, so if everything works a preview of a webpage like document should appear. The file also produces a github friendly .md file. **This means you should only edit the Rmd file (leave the md and output files alone! They are automatically produced any changes you make there will be overwritten by your next knit)**.
 
-When you **Knit** a file, it runs in a totally new R instance. this
-means anything you only added in your instance (like working in the
-console) won't be available. In other words, its the best way to see
-what a "new" user gets when they use your code.
+When you **Knit** a file, it runs in a totally new R instance. this means anything you only added in your instance (like working in the console) won't be available. In other words, its the best way to see what a "new" user gets when they use your code.
 
-however, you don't have to knit the file every time. if you just want to
-see output, note you can press the green button next to an R chunk.
+however, you don't have to knit the file every time. if you just want to see output, note you can press the green button next to an R chunk.
 
-![The green arrows just runs the chunk in the console and shows the
-output](https://lh3.googleusercontent.com/pw/AM-JKLUYgHbhk7YzhXdAZwV-fvLFlnOc4IcCMwt6U21qsHP7sXcjQ5xDL86NewZo2THSGAveP0Y1cL2PP4yysUTLn4N6iXoO6B1h_8RtAlqmNONY2W5V_j_4hqtQ8d3GhroTNJewT3oEqSVA-Vjh4IkDRqE-pw=w784-h73-no?authuser=0)
+![The green arrows just runs the chunk in the console and shows the output](https://lh3.googleusercontent.com/pw/AM-JKLUYgHbhk7YzhXdAZwV-fvLFlnOc4IcCMwt6U21qsHP7sXcjQ5xDL86NewZo2THSGAveP0Y1cL2PP4yysUTLn4N6iXoO6B1h_8RtAlqmNONY2W5V_j_4hqtQ8d3GhroTNJewT3oEqSVA-Vjh4IkDRqE-pw=w784-h73-no?authuser=0)
 
 ```{r}
 print("this is a chunk")
 ```
 
-Now we'll start changing the file to show you how rmarkdown works.
-First, amend the file by replacing the **NAME** and **DATE** spots in
-the header (top of the file between the --- markers) with your name and
-the real date. Then **Knit** the file again. You should see your name in
-the new preview.
+Now we'll start changing the file to show you how rmarkdown works. First, amend the file by replacing the **NAME** and **DATE** spots in the header (top of the file between the --- markers) with your name and the real date. Then **Knit** the file again. You should see your name in the new preview.
 
-Rstudio has a **Markdown Quick Reference** guide (look under the help
-tab), but some general notes.
+Rstudio has a **Markdown Quick Reference** guide (look under the help tab), but some general notes.
 
 -   Pound/Hashtag signs denote headers
--   you can surround something double asterisks for bold or single
-    asterisks for italics
--   lists are denoted by numbers or asterisks at beginning of line
-    (followed by space!)
+-   you can surround something double asterisks for bold or single asterisks for italics
+-   lists are denoted by numbers or asterisks at beginning of line (followed by space!)
     -   and can be indented for sublevels
--   R code can be done inline, but is generally placed in stand-alone
-    chunks
+-   R code can be done inline, but is generally placed in stand-alone chunks
     -   these will, by default, show the code and output
 -   lots of other options exist!
 
-The main idea is Rmd files allow you to combine code, text, graphs, etc
-into multiple outputs that you can share (including with coding
-illiterate colleagues who just want output).
+The main idea is Rmd files allow you to combine code, text, graphs, etc into multiple outputs that you can share (including with coding illiterate colleagues who just want output).
 
-To practice working with Rmd files and R, work through the questions
-below. You can also get more help with [this
-video](https://www.youtube.com/watch?v=shs95EH4EhY&list=PLmnVhyQ-20EUFRmsjpYTyB5--zyolr6-o&index=9&t=24s){target="_blank"}
+To practice working with Rmd files and R, work through the questions below. You can also get more help with [this video](https://www.youtube.com/watch?v=shs95EH4EhY&list=PLmnVhyQ-20EUFRmsjpYTyB5--zyolr6-o&index=9&t=24s){target="_blank"}
 
 ### Practice in R
 
@@ -102,23 +69,15 @@ Let x be defined by
 x <- 5:15
 ```
 
-Try executing this chunk (in R studio, not the webview) by clicking the
-*Run* button within the chunk or by placing your cursor inside it and
-pressing *Ctrl+Shift+Enter*.
+Try executing this chunk (in R studio, not the webview) by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*.
 
-This will run the code in the Console. You may need to switch to Console
-(from Rmarkdown) in the lower right window area to see this. The
-executed code is also displayed in your processed file (hit **Knit**
-again to see this!).
+This will run the code in the Console. You may need to switch to Console (from Rmarkdown) in the lower right window area to see this. The executed code is also displayed in your processed file (hit **Knit** again to see this!).
 
-Note running this chunk has added an object named `x` to the
-**Environment** tab area (top right area of screen). But nothing was
-"returned" in the console. You prove this by typing `x` in the console.
-What does it return?
+Note running this chunk has added an object named `x` to the **Environment** tab area (top right area of screen). But nothing was "returned" in the console. You prove this by typing `x` in the console. What does it return?
 
 Determine what the ":" does! Complete the following sentence:
 
-The : means FILL THIS IN.
+The : means give every integer between the lowest and highest values given.
 
 #### 2
 
@@ -126,18 +85,67 @@ Now try to guess the output of these commands
 
 -   length(x)
 -   max(x)
--   x[x \< 10]
+-   x\[x \< 10\]
 -   x\^2
--   x[ x \< 12 & x \> 7]
+-   x\[ x \< 12 & x \> 7\]
 
-INSERT AN R CHUNK HERE AND RUN EACH OF THESE COMMANDS. Add a new chunk
-by clicking the *Insert Chunk* button on the toolbar or by pressing
-*Ctrl+Alt+I*. Then state what each of these does.
+INSERT AN R CHUNK HERE AND RUN EACH OF THESE COMMANDS. Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*. Then state what each of these does.
+
+```{r}
+length(x)
+```
+
+length(x) returns the number of items in the set.
+
+```{r}
+max(x)
+```
+
+max(x) returns the maximum value in the set of integers.
+
+```{r}
+x[x<10]
+```
+
+x\[x\<10\] returns all integers in the set that are less than 10 (the value provided).
+
+```{r}
+x^2
+```
+
+x\^2 returns the square value of each integer in the set.
+
+```{r}
+x[ x < 12 & x > 7]
+```
+
+x\[x\<12 & x\>7\] returns all values greater than 7 and less than 12.
 
 #### 3
 
-Is `-1:2` the same as `(-1):2` or `-(1:2)`? INSERT AN R CHUNK HERE
-    AND RUN EACH OF THESE COMMANDS. Then state what each of these does.
+Is `-1:2` the same as `(-1):2` or `-(1:2)`? INSERT AN R CHUNK HERE AND RUN EACH OF THESE COMMANDS. Then state what each of these does.
+
+```{r}
+-1:2
+```
+
+```{r}
+(-1):2
+```
+
+```{r}
+-(1:2)
+```
+
+-1:2 and (-1):2 return the same results. They give all integers between the lowest and highest values.
+
+-(1:2) returns the negative value of the integers inside the parenthesis.
+
+```{r}
+-1:2
+(-1):2
+-(1:2)
+```
 
 ### Data input, plotting, and tests
 
@@ -147,43 +155,51 @@ You can read in a dataset from the internet following this protocol.
 sleep <- read.csv("http://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/sleep.csv", stringsAsFactors = T)
 ```
 
-Run this chunk and note it has added an object named `sleep` to the
-environment.
+Run this chunk and note it has added an object named `sleep` to the environment.
 
-Info on the dataset is viewable \@
-<http://www.statsci.org/data/general/sleep.html>.
+Info on the dataset is viewable \@ <http://www.statsci.org/data/general/sleep.html>.
 
 #### 4
 
-How many rows does the **sleep** data set have (hint: `?dim`)? What
-    kind of data is stored in each variable?
+How many rows does the **sleep** data set have (hint: `?dim`)? What kind of data is stored in each variable?
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
 
+```{r}
+? sleep
+dim(sleep)
+str(sleep)
+```
+
+dim(sleep) returns rows and columns, in that order? but looking at the data returned it appears to be the opposite. This data set has 62 objects of 12 variables.
+
+str returns the size of the dataset. Can I get this value to appear in the environment tab? I do not understand the use of \$ to select columns.
+
 #### 5
 
-Change the column named *BodyWt* to *Body_weight*"\* in the sleep
-    dataset.
+Change the column named *BodyWt* to *Body_weight*"\* in the sleep dataset.
 
 ADD ANY R CHUNKS YOU USED TO COMPLETE THE TASK.
 
+```{r}
+names(sleep)[names(sleep) %in% "BodyWt"] <- "Body_weight"
+```
+
+```{r}
+str(sleep)
+```
+
 #### 6
 
-Produce a plot of how *TotalSleep* differs between primates and
-    other species. What is this plot showing?
+Produce a plot of how *TotalSleep* differs between primates and other species. What is this plot showing?
 
-Note, as of early 2020 R no longer reads in strings as factors! This
-means the Primate column, which is full of "Yes"s and "No"s, reads in as
-words and R doesn't know how to plot them. There are many ways to handle
-this. You can modify the read.csv command (add stringsAsFactors = T
-option), eg
+Note, as of early 2020 R no longer reads in strings as factors! This means the Primate column, which is full of "Yes"s and "No"s, reads in as words and R doesn't know how to plot them. There are many ways to handle this. You can modify the read.csv command (add stringsAsFactors = T option), eg
 
 ```{r, eval=F}
 sleep <- read.csv("http://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/sleep.csv", stringsAsFactors = T)
 ```
 
-If you do this, you'll need to rechange anything you previously updated
-to the object (like renaming the BodyWt column).
+If you do this, you'll need to rechange anything you previously updated to the object (like renaming the BodyWt column).
 
 You can also modify a single column for the actual object
 
@@ -203,38 +219,61 @@ NOTE YOU CAN ADD A PLOT TO THE DOCUMENT TOO! AMEND THE BELOW AS NEEDED.
 plot(cars)
 ```
 
+```{r}
+plot(TotalSleep ~ Primate, sleep)
+```
+
+```{r}
+plot(TotalSleep ~ factor(Primate), sleep, main = "Variance in sleep differs between primates and non-primates", 
+     xlab = "Primate", ylab = "Total sleep (hours)")
+```
+
 #### 7
 
-The **sleep** dataset begs to have a linear model fit for it. Let's
-    consider. First plot how *TotalSleep* is explained by *BrainWt*. Are
-    there any issues with the data? Exclude any outlier and fit a linear
-    model to obtain the p-value for the model (hint: summary()). What
-    does this imply?
+The **sleep** dataset begs to have a linear model fit for it. Let's consider. First plot how *TotalSleep* is explained by *BrainWt*. Are there any issues with the data? Exclude any outlier and fit a linear model to obtain the p-value for the model (hint: summary()). What does this imply?
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
+
+```{r}
+plot(TotalSleep ~ BrainWt, sleep)
+```
+
+```{r}
+sleep_fit <- lm(TotalSleep ~ BrainWt, sleep[sleep$BrainWt<1000,])
+summary(sleep_fit)
+```
+
+```{r}
+plot(TotalSleep ~ BrainWt, data = sleep[sleep$BrainWt <  1000, ])
+abline(sleep_fit)
+```
+
+Found P-value of
+
+```         
+p-value: 0.0002782
+```
+
+With outliers excluded the linear model fits the data better. If the outliers had been included the line of best fit would be much flatter. According to the data, total sleep decreases as brain weight increases.
 
 ### EXTRA QUESTIONS
 
 *not required*
 
-![alt
-text](https://upload.wikimedia.org/wikipedia/commons/9/94/Puffin_Mrkoww.jpg)
-**Dow Puffin** *Matthew Zalewski / CC BY
-(<https://creativecommons.org/licenses/by/3.0>)*
+![alt text](https://upload.wikimedia.org/wikipedia/commons/9/94/Puffin_Mrkoww.jpg) **Dow Puffin** *Matthew Zalewski / CC BY (<https://creativecommons.org/licenses/by/3.0>)*
 
 #### 8
 
-Sometimes data doesn't have headers (column names),so you have to
-    add them. Download a dataset on alcids (birds like puffins and
-    auklets) from
-    <https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/alcids55.csv>.\
-    You'll need to modify the read.csv function by specifying
-    `header = False`, then use the `names` function to name the columns
-    ["year", "a1_abund", "NAO", "a2_abund", "a3_abund", "a4_abund",
-    "a5_abund", "a6_abund"]. Try it and check your input using the
-    `head` command.
+Sometimes data doesn't have headers (column names),so you have to add them. Download a dataset on alcids (birds like puffins and auklets) from <https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/alcids55.csv>.\
+You'll need to modify the read.csv function by specifying `header = False`, then use the `names` function to name the columns \["year", "a1_abund", "NAO", "a2_abund", "a3_abund", "a4_abund", "a5_abund", "a6_abund"\]. Try it and check your input using the `head` command.
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
+
+```{r}
+alcids <- read.csv("https://raw.githubusercontent.com/jsgosnell/CUNY-BioStats/master/datasets/alcids55.csv",header = F, stringsAsFactors = T)
+names(alcids) <- c("year", "a1_abund", "NAO", "a2_abund", "a3_abund", "a4_abund", "a5_abund", "a6_abund")
+head(alcids)
+```
 
 #### 9
 
@@ -246,7 +285,6 @@ Here's a sample dataset:
 | 01-01-2010 | 50513     | 60       | forest    |
 | 01-15-2010 | 25084     | 60       | grassland |
 
-Enter it into R (manually or via a .csv). (Hint: you have a piece of
-this in the code already). Check your input using the head() command.
+Enter it into R (manually or via a .csv). (Hint: you have a piece of this in the code already). Check your input using the head() command.
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.

@@ -13,19 +13,15 @@ knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 
 ### Forking a repository
 
-First, log into github. Then visit the github site for the repository
-you want to fork (this must be a repository you don't own!)
+First, log into github. Then visit the github site for the repository you want to fork (this must be a repository you don't own!)
 
 ![](/images/fork-fork.png)
 
-Then clone the repository. Now you have a copy you can work on. However,
-we can also do a few other things
+Then clone the repository. Now you have a copy you can work on. However, we can also do a few other things
 
 ### Sync with the fork
 
-If the repository you forked makes changes, these won't be pulled into
-your fork automatically. However, you can pull them using the Sync Fork
-button from the github site
+If the repository you forked makes changes, these won't be pulled into your fork automatically. However, you can pull them using the Sync Fork button from the github site
 
 ![](/images/fork-clone.png)
 
